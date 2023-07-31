@@ -9,6 +9,9 @@ SRC		=	my_putchar.c			\
 			my_isneg.c				\
 			my_print_comb.c			\
 			my_put_nbr.c			\
+			my_swap.c				\
+			my_putstr.c				\
+			my_strlen.c				\
 
 OBJ		=	$(SRC:.c=.o)
 

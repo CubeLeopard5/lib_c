@@ -2,6 +2,6 @@
 #include "../include/string.h"
 
 int main(void) {
-    my_print_comb();
+    printf("%d\n", strlen("azertyuiop"));
     return 0;
 }
