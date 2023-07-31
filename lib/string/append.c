@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "./string.h"
-#include <string.h>
 
 static void append_s(string_t *this, const string_t *ap);
 static void append_c(string_t *this, const char *ap);

@@ -5,7 +5,10 @@
 ## make
 ##
 
-SRC		=	my_putchar.c		\
+SRC		=	my_putchar.c			\
+			my_isneg.c				\
+			my_print_comb.c			\
+			my_put_nbr.c			\
 
 OBJ		=	$(SRC:.c=.o)
 

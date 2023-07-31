@@ -5,10 +5,13 @@
 ** kjhgfd
 */
 
-#ifndef STRING_S
-#define STRING_S
+#ifndef STRING_H
+#define STRING_H
 
 #include <stddef.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef struct string_s
 {

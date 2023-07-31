@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "./string.h"
-#include <string.h>
 
 static size_t copy(const string_t *this, char *s, size_t n, size_t pos);
 

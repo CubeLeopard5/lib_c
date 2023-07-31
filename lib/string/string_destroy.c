@@ -5,10 +5,7 @@
 ** jhgfd
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "./string.h"
-#include <string.h>
 
 void string_destroy(string_t *this)
 {

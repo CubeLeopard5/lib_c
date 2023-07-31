@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "./string.h"
-#include <string.h>
 
 static void insert_c(string_t *this, size_t pos, const char *str);
 static void insert_s(string_t *this, size_t pos, const string_t *str);

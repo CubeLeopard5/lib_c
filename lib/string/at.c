@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "./string.h"
-#include <string.h>
 
 static char at(const string_t *this, size_t pos);
 

@@ -5,10 +5,7 @@
 ** jhgf
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "./string.h"
-#include <string.h>
 #include "copy.c"
 #include "assign.c"
 #include "append.c"
