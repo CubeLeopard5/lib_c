@@ -17,6 +17,9 @@ SRC		=	my_putchar.c				\
 			my_sort_int_array.c			\
 			my_compute_factorial.c		\
 			my_compute_power.c			\
+			my_compute_square_root.c	\
+			my_is_prime.c				\
+			my_find_prime_sup.c			\
 
 OBJ		=	$(SRC:.c=.o)
 
