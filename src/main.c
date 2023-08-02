@@ -4,7 +4,10 @@
 #include <math.h>
 
 int main(void) {
-    int a = 5;
-    printf("%d\n", my_find_prime_sup(96));
+    char dest[100] = "Hello";
+    char src[100] = "Hello";
+
+    printf("%d\n", my_strncmp(dest, src, 20));
+    printf("%d\n", strncmp(dest, src, 20));
     return 0;
 }

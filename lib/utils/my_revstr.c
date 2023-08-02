@@ -10,7 +10,7 @@ int my_strlen(char const *str)
     return nb;
 }
 
-char *my_evil_str(char *str)
+char *my_revstr(char *str)
 {
     int len = my_strlen(str);
     char *rtn = malloc(sizeof(char) * len);

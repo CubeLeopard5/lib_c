@@ -12,7 +12,7 @@ SRC		=	my_putchar.c				\
 			my_swap.c					\
 			my_putstr.c					\
 			my_strlen.c					\
-			my_evil_str.c				\
+			my_revstr.c					\
 			my_getnbr.c					\
 			my_sort_int_array.c			\
 			my_compute_factorial.c		\
@@ -20,6 +20,12 @@ SRC		=	my_putchar.c				\
 			my_compute_square_root.c	\
 			my_is_prime.c				\
 			my_find_prime_sup.c			\
+			my_strcpy.c					\
+			my_strncpy.c				\
+			my_strstr.c					\
+			my_strcasestr.c				\
+			my_strcmp.c					\
+			my_strncmp.c				\
 
 OBJ		=	$(SRC:.c=.o)
 
