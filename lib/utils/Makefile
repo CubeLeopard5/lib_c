@@ -26,6 +26,18 @@ SRC		=	my_putchar.c				\
 			my_strcasestr.c				\
 			my_strcmp.c					\
 			my_strncmp.c				\
+			my_strupcase.c				\
+			my_strlowcase.c				\
+			my_strcapitalize.c			\
+			my_str_isalpha.c			\
+			my_str_isnum.c				\
+			my_str_islower.c			\
+			my_str_isupper.c			\
+			my_str_isprintable.c		\
+			my_putnbr_base.c			\
+			my_getnbr_base.c			\
+			my_strchr.c					\
+			my_showstr.c				\
 
 OBJ		=	$(SRC:.c=.o)
 
