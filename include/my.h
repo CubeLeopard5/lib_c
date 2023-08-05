@@ -42,5 +42,7 @@ char **my_str_to_word_array(char const *str, char const c);
 char *convert_base(char const *nbr, char const *base_from, char const *base_to);
 int get_color(unsigned char red, unsigned char green, unsigned char blue);
 int swap_endian_color(int color);
+int my_sort_word_array(char **tab);
+int my_advanced_sort_word_array(char **tab, int (*cmp)(char const *, char const *));
 
 #endif

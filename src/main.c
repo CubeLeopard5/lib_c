@@ -4,13 +4,13 @@
 #include <math.h>
 
 int main(void) {
-    int color = 0xFF8040; // Replace AA, RR, GG, BB with appropriate values
-
-    printf("Original Color: 0x%08X\n", color);
-
-    int swapped_color = swap_endian_color(color);
-
-    printf("Swapped Color: 0x%08X\n", swapped_color);
+    char **tab = my_str_to_word_array("the anwser to the great question of the universe", ' ');
+    my_show_word_array(tab);
+    printf("\n");
+    printf("\n");
+    my_advanced_sort_word_array(tab, my_strcmp);
+    //my_sort_word_array(tab);
+    my_show_word_array(tab);
 
     return 0;
 }
