@@ -34,5 +34,13 @@ int my_putnbr_base(int nbr, char const *base);
 int my_getnbr_base(char const *str, char const *base);
 char *my_strchr(const char *str, char c);
 int my_showstr(char const *str);
+char *my_strcat(char *dest, char const *src);
+char *my_strncat(char *dest, char const *src, int nb);
+char *my_strdup(char const *src);
+int my_show_word_array(char * const *tab);
+char **my_str_to_word_array(char const *str, char const c);
+char *convert_base(char const *nbr, char const *base_from, char const *base_to);
+int get_color(unsigned char red, unsigned char green, unsigned char blue);
+int swap_endian_color(int color);
 
 #endif

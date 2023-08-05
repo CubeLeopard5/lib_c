@@ -4,9 +4,13 @@
 #include <math.h>
 
 int main(void) {
-    char const *base = "I like \n ponies!";
+    int color = 0xFF8040; // Replace AA, RR, GG, BB with appropriate values
 
-    my_showstr(base);
+    printf("Original Color: 0x%08X\n", color);
+
+    int swapped_color = swap_endian_color(color);
+
+    printf("Swapped Color: 0x%08X\n", swapped_color);
 
     return 0;
 }

@@ -38,6 +38,14 @@ SRC		=	my_putchar.c				\
 			my_getnbr_base.c			\
 			my_strchr.c					\
 			my_showstr.c				\
+			my_strcat.c					\
+			my_strncat.c				\
+			my_strdup.c					\
+			my_show_word_array.c		\
+			my_str_to_word_array.c		\
+			convert_base.c				\
+			get_color.c					\
+			swap_endian_color.c			\
 
 OBJ		=	$(SRC:.c=.o)
 
