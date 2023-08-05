@@ -18,16 +18,19 @@ FLAGS  = -Wall -Wextra -g3
 $(NAME):	$(OBJ)
 	make -C ./lib/utils/
 	make -C ./lib/string/
-	gcc -o $(NAME) $(SRC) -L./lib -lutils -lstring -lm $(FLAGS)
+	make -C ./lib/linked_list/
+	gcc -o $(NAME) $(SRC) -L./lib -lutils -lstring -llinkedlist -lm $(FLAGS)
 clean:
 	rm -rf $(OBJ)
 	make -C ./lib/utils/ clean
 	make -C ./lib/string/ clean
+	make -C ./lib/linked_list/ clean
 
 fclean:	clean
 	rm -rf $(NAME)
 	make -C ./lib/utils/ fclean
 	make -C ./lib/string/ fclean
-	rm -f lib/libutils.a lib/libstring.a
+	make -C ./lib/linked_list fclean
+	rm -f lib/libutils.a lib/libstring.a lib/liblinkedlist.a
 
 re:	fclean all
