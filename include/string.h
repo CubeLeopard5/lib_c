@@ -17,8 +17,6 @@ typedef struct string_s
 {
     char *str;
 
-    void (*string_init)(struct string_s *this, const char *s);
-    void (*string_destroy)(struct string_s *this);
     void (*assign_s)(struct string_s *this, const struct string_s *str);
     void (*assign_c)(struct string_s *this, const char *s);
     void (*append_s)(struct string_s *this, const struct string_s *ap);

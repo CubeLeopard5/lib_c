@@ -5,19 +5,20 @@
 ## script to build lib
 ##
 
-SRC		=	string_init.c		\
-			string_destroy.c	\
+SRC		=	array_init.c		\
+			array_destroy.c		\
+			print.c				\
 
 OBJ		=    $(SRC:.c=.o)
 
-NAME	=    libstring.a
+NAME	=    libarray.a
 
 all:    $(NAME)
 
 $(NAME):    $(OBJ)
 	ar rc  $(NAME) $(OBJ)
 	mv  $(NAME) ../
-	cp string.h ../../include/
+	cp array.h ../../include/
 	make clean
 
 clean:
