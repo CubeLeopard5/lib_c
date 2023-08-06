@@ -8,6 +8,8 @@ SRC 	= 	../lib/utils/my_revstr.c				\
 			my_revstr_tests.c						\
 			../lib/utils/my_getnbr.c				\
 			my_getnbr_tests.c						\
+			../lib/utils/convert_base.c				\
+			convert_base_tests.c					\
 
 OBJ	 = 	$(SRC:.c=.o)
 
