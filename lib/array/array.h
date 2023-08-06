@@ -17,7 +17,10 @@ typedef struct array_s
     char **tab;
 
     void (*print)(const struct array_s *this);
-
+    int (*size)(const struct array_s *this);
+    int (*whereis)(const struct array_s *this, const char *s);
+    char *(*at)(const struct array_s *this, size_t pos);
+    char *(*to_string)(const struct array_s *this, const char c);
 } array_t;
 
 void array_init(array_t *this, const char **t);

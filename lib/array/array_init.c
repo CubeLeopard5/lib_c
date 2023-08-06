@@ -7,6 +7,10 @@
 
 #include "./array.h"
 #include "print.c"
+#include "size.c"
+#include "whereis.c"
+#include "at.c"
+#include "to_string.c"
 
 int get_array_length(const char **t)
 {
@@ -50,6 +54,10 @@ void fill_array(array_t *this, const char **t)
 void init_struct(array_t *this)
 {
     this->print = &print;
+    this->size = &size;
+    this->whereis = &whereis;
+    this->at = &at;
+    this->to_string = &to_string;
 }
 
 void array_init(array_t *this, const char **t)

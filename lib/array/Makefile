@@ -7,7 +7,6 @@
 
 SRC		=	array_init.c		\
 			array_destroy.c		\
-			print.c				\
 
 OBJ		=    $(SRC:.c=.o)
 
