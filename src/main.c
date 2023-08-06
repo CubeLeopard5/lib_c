@@ -11,9 +11,9 @@ int main(void)
     const char *t[] = { "lol", "AAA", "dfghjkl", NULL };
     array_init(&tab, t);
     tab.print(&tab);
-    char *res = tab.to_string(&tab, '|');
-    printf("RES = %s\n", res);
-    free(res);
+    tab.push_back(&tab, "Aloha");
+    printf("\n\n");
+    tab.print(&tab);
     array_destroy(&tab);
     return 0;
 }

@@ -21,6 +21,7 @@ typedef struct array_s
     int (*whereis)(const struct array_s *this, const char *s);
     char *(*at)(const struct array_s *this, size_t pos);
     char *(*to_string)(const struct array_s *this, const char c);
+    void (*push_back)(struct array_s *this, char *str);
 } array_t;
 
 void array_init(array_t *this, const char **t);

@@ -11,6 +11,7 @@
 #include "whereis.c"
 #include "at.c"
 #include "to_string.c"
+#include "push_back.c"
 
 int get_array_length(const char **t)
 {
@@ -58,6 +59,7 @@ void init_struct(array_t *this)
     this->whereis = &whereis;
     this->at = &at;
     this->to_string = &to_string;
+    this->push_back = &push_back;
 }
 
 void array_init(array_t *this, const char **t)
