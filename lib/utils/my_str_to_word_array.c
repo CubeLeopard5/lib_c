@@ -14,7 +14,7 @@ char *str_in_tab(char *tab_place, char const *str, int start, int end)
 {
     int j = 0;
 
-    tab_place = malloc(sizeof(char) * (end - start));
+    tab_place = malloc(sizeof(char) * (end - start + 1));
     for (int i = start; str[i] != '\0' && i < end; i++, j++) {
         tab_place[j] = str[i];
     }
@@ -42,8 +42,7 @@ char **my_str_to_word_array(char const *str, char const c)
     int start = 0;
     int idx = 0;
 
-    
-    tab = malloc(sizeof(char *) * count);
+    tab = malloc(sizeof(char *) * (count + 1));
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] == c) {
             tab[idx] = str_in_tab(tab[idx], str, start, i);

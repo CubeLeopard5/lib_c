@@ -48,6 +48,9 @@ SRC		=	my_putchar.c					\
 			swap_endian_color.c				\
 			my_sort_word_array.c			\
 			my_advanced_sort_word_array.c	\
+			my_int_array_sum.c				\
+			my_get_word_array_len.c			\
+			my_word_array_to_str.c			\
 
 OBJ		=	$(SRC:.c=.o)
 
