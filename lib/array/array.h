@@ -27,6 +27,7 @@ typedef struct array_s
     void (*delete)(struct array_s *this, size_t pos);
     void (*merge_c)(struct array_s *this, char **t);
     void (*merge_t)(struct array_s *this, struct array_s *t);
+    void (*clear)(struct array_s *this);
 } array_t;
 
 void array_init(array_t *this, const char **t);
