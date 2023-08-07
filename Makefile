@@ -7,36 +7,43 @@
 
 SRC		=	src/main.c		\
 
-NAME	=	lol
+NAME	=	my_program
 
 OBJ		=	$(SRC:.c=.o)
 
-all:	$(NAME)
+LIB_DIRS		=	./lib/utils ./lib/string ./lib/array ./lib/linked_list
+TESTS_DIR		=	./tests
+
+LIB_NAMES     	=	utils string array linkedlist
+LIBRAIRIES    	=	$(LIB_NAMES:%=-l%)
+STATIC_LIBS   	=	$(LIB_NAMES:%=lib/lib%.a)
 
 FLAGS  = -Wall -Wextra -g3
 
+all:	$(NAME)
+
 $(NAME):	$(OBJ)
-	make -C ./lib/utils/
-	make -C ./lib/string/
-	make -C ./lib/array/
-	make -C ./lib/linked_list/
-	make -C ./tests/
-	gcc -o $(NAME) $(SRC) -L./lib -lutils -lstring -larray -llinkedlist -lm $(FLAGS)
+	@for dir in $(LIB_DIRS); do 	\
+		$(MAKE) -C $$dir; 			\
+	done
+	$(MAKE) -C $(TESTS_DIR)
+	gcc -o $(NAME) $(SRC) -L./lib $(LIBRAIRIES) -lm $(FLAGS)
+
 clean:
 	rm -rf $(OBJ)
-	make -C ./lib/utils/ clean
-	make -C ./lib/string/ clean
-	make -C ./lib/array/ clean
-	make -C ./lib/linked_list/ clean
-	make -C ./tests/ clean
+	@for dir in $(LIB_DIRS); do 	\
+		$(MAKE) -C $$dir clean;		\
+	done
+	$(MAKE) -C $(TESTS_DIR) clean
 
 fclean:	clean
 	rm -rf $(NAME)
-	make -C ./lib/utils/ fclean
-	make -C ./lib/string/ fclean
-	make -C ./lib/array/ fclean
-	make -C ./lib/linked_list fclean
-	make -C ./tests/ fclean
-	rm -f lib/libutils.a lib/libstring.a lib/libarray.a lib/liblinkedlist.a
+	@for dir in $(LIB_DIRS); do 	\
+		$(MAKE) -C $$dir fclean;	\
+	done
+	$(MAKE) -C $(TESTS_DIR) fclean
+	rm -f $(STATIC_LIBS)
 
 re:	fclean all
+
+.PHONY: all clean fclean re
