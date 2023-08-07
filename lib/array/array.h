@@ -21,7 +21,12 @@ typedef struct array_s
     int (*whereis)(const struct array_s *this, const char *s);
     char *(*at)(const struct array_s *this, size_t pos);
     char *(*to_string)(const struct array_s *this, const char c);
-    void (*push_back)(struct array_s *this, char *str);
+    void (*push_back)(struct array_s *this, const char *str);
+    void (*insert_c)(struct array_s *this, size_t pos, const char *str);
+    void (*sort)(struct array_s *this, int (*cmp)(char const *, char const *));
+    void (*delete)(struct array_s *this, size_t pos);
+    void (*merge_c)(struct array_s *this, char **t);
+    void (*merge_t)(struct array_s *this, struct array_s *t);
 } array_t;
 
 void array_init(array_t *this, const char **t);

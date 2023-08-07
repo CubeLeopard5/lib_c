@@ -1,6 +1,6 @@
 #include "./array.h"
 
-static void push_back(array_t *this, char *str);
+static void push_back(array_t *this, const char *str);
 
 int my_strlen(char const *str);
 
@@ -15,7 +15,7 @@ char *my_strcpy(char *dest, char const *src)
     return dest;
 }
 
-static void push_back(array_t *this, char *str)
+static void push_back(array_t *this, const char *str)
 {
     int len = this->size(this);
 

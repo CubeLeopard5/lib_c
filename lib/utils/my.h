@@ -47,5 +47,6 @@ int my_advanced_sort_word_array(char **tab, int (*cmp)(char const *, char const 
 int my_int_array_sum(int *tab, int size);
 int my_get_word_array_len(char const **tab);
 char *my_word_array_to_str(char **tab, char c);
+char **my_word_array_dup(char **src);
 
 #endif

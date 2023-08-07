@@ -12,6 +12,10 @@
 #include "at.c"
 #include "to_string.c"
 #include "push_back.c"
+#include "insert.c"
+#include "sort.c"
+#include "delete.c"
+#include "merge.c"
 
 int get_array_length(const char **t)
 {
@@ -60,6 +64,11 @@ void init_struct(array_t *this)
     this->at = &at;
     this->to_string = &to_string;
     this->push_back = &push_back;
+    this->insert_c = &insert_c;
+    this->sort = &sort;
+    this->delete = &delete;
+    this->merge_c = &merge_c;
+    this->merge_t = &merge_t;
 }
 
 void array_init(array_t *this, const char **t)

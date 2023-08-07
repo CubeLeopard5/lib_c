@@ -51,6 +51,7 @@ SRC		=	my_putchar.c					\
 			my_int_array_sum.c				\
 			my_get_word_array_len.c			\
 			my_word_array_to_str.c			\
+			my_word_array_dup.c				\
 
 OBJ		=	$(SRC:.c=.o)
 
