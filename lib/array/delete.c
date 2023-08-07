@@ -20,7 +20,7 @@ static void delete(array_t *this, size_t pos)
         }
     }
     t[len - 1] = NULL;
-    free_word_array(this->tab);
+    this->clear(this);
     this->tab = my_word_array_dup(t);
     free_word_array(t);
 }

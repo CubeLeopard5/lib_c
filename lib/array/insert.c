@@ -54,7 +54,7 @@ static void insert_c(array_t *this, size_t pos, const char *str)
         }
     }
     t[len] = NULL;
-    free_word_array(this->tab);
+    this->clear(this);
     this->tab = my_word_array_dup(t);
     free_word_array(t);
 }

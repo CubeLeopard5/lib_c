@@ -17,6 +17,7 @@
 #include "delete.c"
 #include "merge.c"
 #include "clear.c"
+#include "apply.c"
 
 int get_array_length(const char **t)
 {
@@ -71,6 +72,8 @@ void init_struct(array_t *this)
     this->merge_c = &merge_c;
     this->merge_t = &merge_t;
     this->clear = &clear;
+    this->apply = &apply;
+    this->apply_on_match = &apply_on_match;
 }
 
 void array_init(array_t *this, const char **t)

@@ -28,6 +28,8 @@ typedef struct array_s
     void (*merge_c)(struct array_s *this, char **t);
     void (*merge_t)(struct array_s *this, struct array_s *t);
     void (*clear)(struct array_s *this);
+    void (*apply)(struct array_s *this, int (*f)(char *));
+    void (*apply_on_match)(struct array_s *this, int (*f)(char *), const char *data_ref, int (*cmp)());
 } array_t;
 
 void array_init(array_t *this, const char **t);
