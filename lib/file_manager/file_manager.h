@@ -23,6 +23,8 @@ typedef struct file_manager_s
 
     void (*print_s)(const struct file_manager_s *this);
     void (*print_t)(const struct file_manager_s *this);
+    int (*copy)(const struct file_manager_s *this, const char *dest_filename);
+    int (*append)(struct file_manager_s *this, const char *src_filename);
 
 } file_manager_t;
 

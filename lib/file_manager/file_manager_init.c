@@ -1,5 +1,7 @@
 #include "./file_manager.h"
 #include "print.c"
+#include "copy.c"
+#include "append.c"
 
 size_t get_file_nb_lines(FILE *file)
 {
@@ -103,15 +105,34 @@ void fill_str_content(file_manager_t *this)
     this->str_content[this->size] = '\0';
 }
 
+void free_file_str_content(file_manager_t *this)
+{
+    if (this->str_content) {
+        free(this->str_content);
+    }
+}
+
+void free_file_word_tab_content(file_manager_t *this)
+{
+    if (this->word_tab_content != NULL) {
+        for (int i = 0; this->word_tab_content[i] != NULL; i++) {
+            free(this->word_tab_content[i]);
+        }
+        free(this->word_tab_content);
+    }
+}
+
 void init_struct(file_manager_t *this)
 {
     this->print_s = &print_s;
     this->print_t = &print_t;
+    this->copy = &copy;
+    this->append = &append;
 }
 
 void file_manager_init(file_manager_t *this, const char *filename)
 {
-    if (filename != NULL && (this->fp = fopen(filename, "r")) != NULL) {
+    if (filename != NULL && (this->fp = fopen(filename, "r+")) != NULL) {
         set_filename(this, filename);
         fill_str_content(this);
         this->word_tab_content = NULL;
