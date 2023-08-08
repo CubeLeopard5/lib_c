@@ -14,6 +14,9 @@ static void print_t(const file_manager_t *this)
     if (this->word_tab_content != NULL) {
         for (int i = 0; this->word_tab_content[i] != NULL; i++) {
             my_putstr(this->word_tab_content[i]);
+            if (this->word_tab_content[i] != NULL) {
+                my_putstr("\n");
+            }
         }
     }
 }

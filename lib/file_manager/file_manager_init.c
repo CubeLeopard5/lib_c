@@ -2,19 +2,21 @@
 #include "print.c"
 #include "copy.c"
 #include "append.c"
+#include "count.c"
+#include "insert.c"
 
 size_t get_file_nb_lines(FILE *file)
 {
-    size_t lineCount = 0;
+    size_t line_count = 0;
     char ch;
 
     fseek(file, 0, SEEK_SET);
     while ((ch = fgetc(file)) != EOF) {
         if (ch == '\n') {
-            lineCount++;
+            line_count++;
         }
     }
-    return lineCount + 1;
+    return line_count + 1;
 }
 
 void allocate_array_mem(file_manager_t *this)
@@ -128,6 +130,9 @@ void init_struct(file_manager_t *this)
     this->print_t = &print_t;
     this->copy = &copy;
     this->append = &append;
+    this->count = &count;
+    this->insert_p = &insert_p;
+    this->insert_l = &insert_l;
 }
 
 void file_manager_init(file_manager_t *this, const char *filename)

@@ -8,6 +8,16 @@ void fill_str_content(file_manager_t *this);
 void put_char_in_array_after_allocation(file_manager_t *this);
 void allocate_array_mem(file_manager_t *this);
 
+void update_struct(file_manager_t *this)
+{
+    free_file_str_content(this);
+    fill_str_content(this);
+    free_file_word_tab_content(this);
+    this->word_tab_content = NULL;
+    allocate_array_mem(this);
+    put_char_in_array_after_allocation(this);
+}
+
 static int append(file_manager_t *this, const char *src_filename)
 {
     FILE *src_file;
@@ -23,12 +33,7 @@ static int append(file_manager_t *this, const char *src_filename)
             fputc(ch, this->fp);
         }
         fclose(src_file);
-        free_file_str_content(this);
-        fill_str_content(this);
-        free_file_word_tab_content(this);
-        this->word_tab_content = NULL;
-        allocate_array_mem(this);
-        put_char_in_array_after_allocation(this);
+        update_struct(this);
     }
     return 0;
 }

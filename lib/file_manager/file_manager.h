@@ -25,6 +25,9 @@ typedef struct file_manager_s
     void (*print_t)(const struct file_manager_s *this);
     int (*copy)(const struct file_manager_s *this, const char *dest_filename);
     int (*append)(struct file_manager_s *this, const char *src_filename);
+    int (*count)(const struct file_manager_s *this);
+    void (*insert_p)(struct file_manager_s *this, const char *str, size_t pos);
+    void (*insert_l)(struct file_manager_s *this, const char *str, size_t pos);
 
 } file_manager_t;
 
