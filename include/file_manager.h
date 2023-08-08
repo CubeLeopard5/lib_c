@@ -18,8 +18,11 @@ typedef struct file_manager_s
     char *str_content;
     char **word_tab_content;
     char *filename;
+    char *extension;
+    long size;
 
-    void (*print)(const struct file_manager_s *this);
+    void (*print_s)(const struct file_manager_s *this);
+    void (*print_t)(const struct file_manager_s *this);
 
 } file_manager_t;
 

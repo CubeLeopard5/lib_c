@@ -14,4 +14,11 @@ void file_manager_destroy(file_manager_t *this)
         }
         free(this->word_tab_content);
     }
+    if (this->extension) {
+        free(this->extension);
+    }
+    if (this->filename) {
+        free(this->filename);
+    }
+    this->size = 0;
 }

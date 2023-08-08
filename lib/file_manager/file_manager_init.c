@@ -63,27 +63,56 @@ void put_char_in_array_after_allocation(file_manager_t *this)
     this->word_tab_content[tab_idx] = NULL;
 }
 
+void set_filename(file_manager_t *this, const char *filename)
+{
+    int len_name = 0;
+    int len_ext = 0;
+    int dot = 0;
+
+    for (int i = 0; filename[i] != '\0'; i++) {
+        if (dot == 1) {
+            len_ext++;
+        }
+        if (dot == 0 && filename[i] != '.') {
+            len_name++;
+        } else if (dot == 0 && filename[i] == '.') {
+            dot = 1;
+        }
+    }
+    this->filename = malloc(sizeof(char) * (len_name + 1));
+    for (int i = 0; filename[i] != '.'; i++) {
+        this->filename[i] = filename[i];
+        this->filename[i + 1] = '\0';
+    }
+    this->extension = malloc(sizeof(char) * (len_ext + 1));
+    for (int i = len_name + 1, j = 0; filename[i] != '\0'; i++, j++) {
+        this->extension[j] = filename[i];
+        this->extension[j + 1] = '\0';
+    }
+}
+
 void fill_str_content(file_manager_t *this)
 {
-    long fileSize = 0;
+    this->size = 0;
 
     fseek(this->fp, 0, SEEK_END);
-    fileSize = ftell(this->fp);
+    this->size = ftell(this->fp);
     fseek(this->fp, 0, SEEK_SET);
-    this->str_content = malloc(sizeof(char) * (fileSize + 1));
-    fread(this->str_content, 1, fileSize, this->fp);
-    this->str_content[fileSize] = '\0';
+    this->str_content = malloc(sizeof(char) * (this->size + 1));
+    fread(this->str_content, 1, this->size, this->fp);
+    this->str_content[this->size] = '\0';
 }
 
 void init_struct(file_manager_t *this)
 {
-    this->print = &print;
+    this->print_s = &print_s;
+    this->print_t = &print_t;
 }
 
 void file_manager_init(file_manager_t *this, const char *filename)
 {
-    if (filename != NULL) {
-        this->fp = fopen(filename, "r");
+    if (filename != NULL && (this->fp = fopen(filename, "r")) != NULL) {
+        set_filename(this, filename);
         fill_str_content(this);
         this->word_tab_content = NULL;
         allocate_array_mem(this);
@@ -91,6 +120,9 @@ void file_manager_init(file_manager_t *this, const char *filename)
     } else {
         this->fp = NULL;
         this->word_tab_content = NULL;
+        this->str_content = NULL;
+        this->extension = NULL;
+        this->size = 0;
     }
     init_struct(this);
 }
