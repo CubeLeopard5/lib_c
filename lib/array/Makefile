@@ -8,9 +8,9 @@
 SRC		=	array_init.c		\
 			array_destroy.c		\
 
-OBJ		=    $(SRC:.c=.o)
+OBJ		=	$(SRC:.c=.o)
 
-NAME	=    libarray.a
+NAME	=	libarray.a
 
 all:    $(NAME)
 
@@ -18,7 +18,7 @@ $(NAME):    $(OBJ)
 	ar rc  $(NAME) $(OBJ)
 	mv  $(NAME) ../
 	cp array.h ../../include/
-	make clean
+	$(MAKE) clean
 
 clean:
 	rm -rf $(OBJ)
@@ -27,3 +27,5 @@ fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

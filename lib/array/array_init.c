@@ -18,6 +18,7 @@
 #include "merge.c"
 #include "clear.c"
 #include "apply.c"
+#include "occurrence.c"
 
 int get_array_length(const char **t)
 {
@@ -74,6 +75,8 @@ void init_struct(array_t *this)
     this->clear = &clear;
     this->apply = &apply;
     this->apply_on_match = &apply_on_match;
+    this->occurrence_f = &occurrence_f;
+    this->occurrence = &occurrence;
 }
 
 void array_init(array_t *this, const char **t)

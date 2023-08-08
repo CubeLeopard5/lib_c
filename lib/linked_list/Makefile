@@ -30,7 +30,7 @@ $(NAME):	$(OBJ)
 	ar rc $(NAME) $(OBJ)
 	mv  $(NAME) ../
 	cp linked_list.h ../../include/
-	make clean
+	$(MAKE) clean
 clean:
 	rm -f $(OBJ)
 

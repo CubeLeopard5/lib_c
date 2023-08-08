@@ -64,7 +64,7 @@ $(NAME):	$(OBJ)
 	ar rc $(NAME) $(OBJ)
 	mv  $(NAME) ../
 	cp my.h ../../include/
-	make clean
+	$(MAKE) clean
 clean:
 	rm -f $(OBJ)
 

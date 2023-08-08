@@ -18,7 +18,7 @@ $(NAME):    $(OBJ)
 	ar rc  $(NAME) $(OBJ)
 	mv  $(NAME) ../
 	cp string.h ../../include/
-	make clean
+	$(MAKE) clean
 
 clean:
 	rm -rf $(OBJ)

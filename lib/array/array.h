@@ -30,6 +30,8 @@ typedef struct array_s
     void (*clear)(struct array_s *this);
     void (*apply)(struct array_s *this, int (*f)(char *));
     void (*apply_on_match)(struct array_s *this, int (*f)(char *), const char *data_ref, int (*cmp)());
+    char *(*occurrence_f)(const struct array_s *this, const char *str);
+    char **(*occurrence)(const struct array_s *this, const char *str, size_t n);
 } array_t;
 
 void array_init(array_t *this, const char **t);
