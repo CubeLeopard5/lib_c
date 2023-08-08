@@ -11,10 +11,10 @@ NAME	=	my_program
 
 OBJ		=	$(SRC:.c=.o)
 
-LIB_DIRS		=	./lib/utils ./lib/string ./lib/array ./lib/linked_list
+LIB_DIRS		=	./lib/utils ./lib/string ./lib/array ./lib/linked_list ./lib/file_manager
 TESTS_DIR		=	./tests
 
-LIB_NAMES     	=	utils string array linkedlist
+LIB_NAMES     	=	utils string array linkedlist filemanager
 LIBRAIRIES    	=	$(LIB_NAMES:%=-l%)
 STATIC_LIBS   	=	$(LIB_NAMES:%=lib/lib%.a)
 
