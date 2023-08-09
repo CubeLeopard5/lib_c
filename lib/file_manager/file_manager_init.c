@@ -4,6 +4,11 @@
 #include "append.c"
 #include "count.c"
 #include "insert.c"
+#include "rename_file.c"
+#include "occurrence.c"
+#include "get_pos.c"
+#include "delete.c"
+#include "replace.c"
 
 size_t get_file_nb_lines(FILE *file)
 {
@@ -133,6 +138,13 @@ void init_struct(file_manager_t *this)
     this->count = &count;
     this->insert_p = &insert_p;
     this->insert_l = &insert_l;
+    this->rename_file = &rename_file;
+    this->occurrence_f = &occurrence_f;
+    this->occurrence = &occurrence;
+    this->get_pos = &get_pos;
+    this->get_next_pos = &get_next_pos;
+    this->delete_c = &delete_c;
+    this->replace = &replace;
 }
 
 void file_manager_init(file_manager_t *this, const char *filename)

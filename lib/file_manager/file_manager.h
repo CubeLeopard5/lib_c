@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 typedef struct file_manager_s
 {
@@ -28,6 +29,13 @@ typedef struct file_manager_s
     int (*count)(const struct file_manager_s *this);
     void (*insert_p)(struct file_manager_s *this, const char *str, size_t pos);
     void (*insert_l)(struct file_manager_s *this, const char *str, size_t pos);
+    void (*rename_file)(struct file_manager_s *this, const char *str);
+    char *(*occurrence_f)(struct file_manager_s *this, const char *str);
+    char **(*occurrence)(struct file_manager_s *this, const char *str, size_t n);
+    int (*get_pos)(const struct file_manager_s *this, const char *to_find);
+    int (*get_next_pos)(const struct file_manager_s *this, const char *to_find, size_t pos);
+    void (*delete_c)(struct file_manager_s *this, int position, int n);
+    void (*replace)(struct file_manager_s *this, const char *to_find, const char *str);
 
 } file_manager_t;
 
