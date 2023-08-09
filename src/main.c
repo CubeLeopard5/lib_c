@@ -10,8 +10,6 @@ int main(void)
 {
     file_manager_t file;
     file_manager_init(&file, "file.txt");
-    file.replace(&file, "er", "wakabonga");
-    file.print_t(&file);
     file_manager_destroy(&file);
     return 0;
 }

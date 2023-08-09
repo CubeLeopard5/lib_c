@@ -36,6 +36,7 @@ typedef struct file_manager_s
     int (*get_next_pos)(const struct file_manager_s *this, const char *to_find, size_t pos);
     void (*delete_c)(struct file_manager_s *this, int position, int n);
     void (*replace)(struct file_manager_s *this, const char *to_find, const char *str);
+    char **(*split)(const struct file_manager_s *this, const char delimiter);
 
 } file_manager_t;
 

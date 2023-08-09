@@ -9,6 +9,7 @@
 #include "get_pos.c"
 #include "delete.c"
 #include "replace.c"
+#include "split.c"
 
 size_t get_file_nb_lines(FILE *file)
 {
@@ -145,6 +146,7 @@ void init_struct(file_manager_t *this)
     this->get_next_pos = &get_next_pos;
     this->delete_c = &delete_c;
     this->replace = &replace;
+    this->split = &split;
 }
 
 void file_manager_init(file_manager_t *this, const char *filename)
